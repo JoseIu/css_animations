@@ -1,0 +1,56 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="hover">
+  <section class="hover wrapper">
+    <div class="images">
+      <img class="image black-goku" src="./images/optimized/black_goku.webp" alt="" />
+
+      <img class="image goku" src="./images/optimized/goku.webp" alt="" />
+
+      <img class="image vegeta-2" src="./images/optimized/vegeta_3.webp" alt="" />
+      <img class="image vegeta" src="./images/optimized/vegeta.webp" alt="" />
+      <img class="image vegeta-3" src="./images/optimized/vegeta_2.webp" alt="" />
+    </div>
+    <div class="images images2">
+      <img class="image black-goku" src="./images/optimized/black_goku.webp" alt="" />
+
+      <img class="image goku" src="./images/optimized/goku.webp" alt="" />
+
+      <img class="image vegeta-2" src="./images/optimized/vegeta_3.webp" alt="" />
+      <img class="image vegeta" src="./images/optimized/vegeta.webp" alt="" />
+      <img class="image vegeta-3" src="./images/optimized/vegeta_2.webp" alt="" />
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10rem;
+  }
+  .images {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: end;
+    gap: 1em;
+  }
+  .images:hover .image:not(:hover) {
+    filter: grayscale(1) blur(5px);
+  }
+  .images2 .image:not(:hover) {
+    filter: grayscale(1);
+  }
+  .image {
+    object-fit: contain;
+    aspect-ratio: 2/4;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+  }
+  .images2 .vegeta-2:not(:hover) {
+    filter: none;
+  }
+</style>
