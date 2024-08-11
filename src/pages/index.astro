@@ -1,9 +1,94 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout title="Soda">
-	<section>
-		<h1>Soda</h1>
-	</section>
+  <section class="soda">
+    <div class="product">
+      <div class="image"></div>
+    </div>
+    <div class="product3">
+      <div class="image3" style="--url:url('images/soda/bg.png')"></div>
+      <div class="image3" style="--url:url('images/soda/bg2.png')"></div>
+    </div>
+    <div class="product">
+      <div class="image2"></div>
+    </div>
+  </section>
 </MainLayout>
+
+<style>
+  .soda {
+    height: calc(100vh - 3.4rem);
+    background-image: url('./images/soda/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .product,
+  .product3 {
+    width: 260px;
+    transition: all 0.5s ease;
+    --left: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .image,
+  .image2,
+  .image3 {
+    width: 250px;
+    aspect-ratio: 2/4;
+    transition: 0.7s ease;
+
+    /*Comun para todos*/
+    background-blend-mode: multiply;
+    mask-size: auto 100%;
+  }
+  .image {
+    background:
+      url('./images/soda/bg.png') var(--left) 0,
+      url('./images/soda/soda2.png');
+    background-size: auto 100%;
+
+    mask-image: url('./images/soda/soda2.png');
+  }
+  .image2 {
+    background:
+      url('./images/soda/bg2.png') var(--left) 0,
+      url('./images/soda/soda2.png');
+    background-size: auto 100%;
+
+    mask-image: url('./images/soda/soda2.png');
+  }
+  .image3 {
+    position: absolute;
+    background:
+      var(--url) var(--left) 0,
+      url('./images/soda/soda2.png');
+    background-size: auto 100%;
+
+    mask-image: url('./images/soda/soda2.png');
+  }
+
+  .product3:hover .image3 {
+    transform: translateY(-140px);
+    --left: -770px;
+  }
+  .product3 .image3:nth-child(2) {
+    opacity: 0;
+  }
+  .product3:hover .image3:nth-child(2) {
+    opacity: 1;
+  }
+  .image:hover,
+  .image2:hover {
+    --left: -770px;
+  }
+</style>
