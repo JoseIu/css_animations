@@ -1,0 +1,172 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="slider">
+  <section class="wrapper">
+    <div class="slider" style="--width: 200px;--height: 50px;--quantity:10 ">
+      <div class="slider__list">
+        <div class="slider__item" style="--position:1">
+          <img class="slider__img" src="./images/slider/slider1_1.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:2">
+          <img class="slider__img" src="./images/slider/slider1_2.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:3">
+          <img class="slider__img" src="./images/slider/slider1_3.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:4">
+          <img class="slider__img" src="./images/slider/slider1_4.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:5">
+          <img class="slider__img" src="./images/slider/slider1_5.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:6">
+          <img class="slider__img" src="./images/slider/slider1_6.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:7">
+          <img class="slider__img" src="./images/slider/slider1_7.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:8">
+          <img class="slider__img" src="./images/slider/slider1_8.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:9">
+          <img class="slider__img" src="./images/slider/slider1_9.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:10">
+          <img class="slider__img" src="./images/slider/slider1_10.png" alt="" />
+        </div>
+      </div>
+      <div class="slider__list">
+        <div class="slider__item" style="--position:1">
+          <img class="slider__img" src="./images/slider/slider1_1.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:2">
+          <img class="slider__img" src="./images/slider/slider1_2.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:3">
+          <img class="slider__img" src="./images/slider/slider1_3.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:4">
+          <img class="slider__img" src="./images/slider/slider1_4.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:5">
+          <img class="slider__img" src="./images/slider/slider1_5.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:6">
+          <img class="slider__img" src="./images/slider/slider1_6.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:7">
+          <img class="slider__img" src="./images/slider/slider1_7.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:8">
+          <img class="slider__img" src="./images/slider/slider1_8.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:9">
+          <img class="slider__img" src="./images/slider/slider1_9.png" alt="" />
+        </div>
+        <div class="slider__item" style="--position:10">
+          <img class="slider__img" src="./images/slider/slider1_10.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="slider reverse" style="--width: 200px;--height: 200px;--quantity:9 ">
+      <div class="slider__list">
+        <div class="slider__item"><img src="./images/slider/slider2_1.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_2.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_3.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_4.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_5.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_6.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_7.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_8.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_9.png" alt="" /></div>
+      </div>
+      <div class="slider__list">
+        <div class="slider__item"><img src="./images/slider/slider2_1.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_2.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_3.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_4.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_5.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_6.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_7.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_8.png" alt="" /></div>
+        <div class="slider__item"><img src="./images/slider/slider2_9.png" alt="" /></div>
+      </div>
+    </div>
+
+    <details>
+      <summary> open </summary>
+
+      <ul>
+        <li>settings</li>
+        <li>settings</li>
+        <li>settings</li>
+        <li>settings</li>
+      </ul>
+    </details>
+  </section>
+</MainLayout>
+
+<style>
+  summary::marker {
+    content: '';
+  }
+  .slider {
+    width: 100%;
+    /* max-width: 70em; */
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, #222 10% 90%, transparent);
+
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .slider__list {
+    min-width: calc(var(--width) * var(--quantity));
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .slider__item {
+    height: var(--height);
+    display: flex;
+    align-items: center;
+    animation: autoRun 20s linear infinite;
+
+    transition: filter 0.5s ease;
+  }
+  .slider:hover .slider__item {
+    animation-play-state: paused;
+    filter: grayscale(1);
+  }
+  .slider .slider__item:hover {
+    filter: grayscale(0);
+  }
+  .slider.reverse .slider__item {
+    animation: reversePlay 20s linear infinite;
+  }
+  .slider.reverse:hover .slider__item {
+    animation-play-state: paused;
+  }
+
+  @keyframes autoRun {
+    0 {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(var(--width) * var(--quantity) * -1));
+    }
+  }
+
+  @keyframes reversePlay {
+    0% {
+      transform: translateX(calc(var(--width) * var(--quantity) * -1));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+</style>
